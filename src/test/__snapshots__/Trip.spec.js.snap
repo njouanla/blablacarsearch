@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trip should render Trip 1`] = `
+<div
+  className="sc-eCssSg dNYkuu"
+>
+  <div
+    className="sc-jSgupP cXdENn"
+  >
+    <div>
+      <div
+        className="sc-gKsewC bxFDn"
+      >
+        <div
+          className="sc-iBPRYJ fIRetL"
+        >
+          14:30
+        </div>
+        <div
+          className="sc-iBPRYJ sc-fubCfw fIRetL iBxxMk"
+        >
+          Paris
+        </div>
+      </div>
+      <div
+        className="sc-gKsewC bxFDn"
+      >
+        <div
+          className="sc-iBPRYJ fIRetL"
+        >
+          19:20
+        </div>
+        <div
+          className="sc-iBPRYJ sc-fubCfw fIRetL iBxxMk"
+        >
+          Lyon
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-iBPRYJ sc-fubCfw fIRetL ksShyK"
+    >
+      37.00
+      €
+    </div>
+  </div>
+  <a
+    href="https://www.blablacar.fr/trip?source=CARPOOLING&id=2090443026-paris-lyon"
+  >
+    Voir le détail
+  </a>
+</div>
+`;
