@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Trip from "./Trip";
+import { List } from '../common/styles';
 
 const propTypes = {
   trips: PropTypes.arrayOf(PropTypes.shape(PropTypes.shape({
@@ -25,7 +26,10 @@ const propTypes = {
 };
 
 const TripsList = ({trips}) => {
-    return trips.map((trip, index) => <Trip key={index} tripData={trip} />);
+    return <List>{trips.length > 0 ?
+        trips.map((trip, index) => <Trip key={index} tripData={trip} />) :
+        <span>Pas de trajet disponible</span>}
+    </List>;
 };
 
 TripsList.propTypes = propTypes;

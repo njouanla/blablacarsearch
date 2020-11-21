@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
+import { Attribute, ColoredAttribute,StyledTrip, TripProperties, WayPoint} from "../common/styles";
 
 export const propTypes = {
     tripData: PropTypes.shape({
@@ -23,12 +24,30 @@ export const propTypes = {
     })
 };
 
+const CURRENCY = {
+    'EUR': '€'
+};
+
 const Trip = ({tripData}) => {
-    return (<div>
-        <div>horaires + destinations</div>
-        <div>prix</div>
-        <div>conducteur</div>
-    </div>)
+    return (
+        <StyledTrip>
+            <TripProperties>
+                <div>
+                    {tripData.waypoints.map((waypoint, index) => (
+                        <WayPoint key={index}>
+                            <Attribute>{`${new Date(waypoint.date_time).getHours()}:${new Date(waypoint.date_time).getMinutes()}`}</Attribute>
+                            <ColoredAttribute isPrice={false}>{waypoint.place.city}</ColoredAttribute>
+                        </WayPoint>
+                    ))}
+                </div>
+                <ColoredAttribute isPrice={true}>
+                    {tripData.price.amount}
+                    {CURRENCY[tripData.price.currency]}
+                </ColoredAttribute>
+            </TripProperties>
+            <a href={tripData.link}>Voir le détail</a>
+        </StyledTrip>
+    )
 };
 
 Trip.propTypes = propTypes;
